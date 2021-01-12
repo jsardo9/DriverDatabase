@@ -1,4 +1,5 @@
 public class Util {
+    // Splits Input Line Into Corresponding Command
     public static void parseCommand(String command, DriverDatabase driverDB) {
         String[] input = command.split(" ");
         switch (input[0]) {
@@ -16,6 +17,7 @@ public class Util {
         }
     }
 
+    // Input Command "Driver [NAME]""
     public static void commandDriver(String[] command, DriverDatabase driverDB) {
         if (command.length != 2) {
             throw new IllegalArgumentException(
@@ -26,6 +28,7 @@ public class Util {
         driverDB.addDriver(new Driver(command[1]));
     }
 
+    // Input Command "Trip [NAME] [STARTTIME] [ENDTIME] [MILES]"
     public static void commandTrip(String[] command, DriverDatabase driverDB) {
         if (command.length != 5) {
             throw new IllegalArgumentException(

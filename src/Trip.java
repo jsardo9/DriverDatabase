@@ -11,16 +11,12 @@ public class Trip {
     }
 
     // Public Accessor Methods
-    public int getStartTime() {
-        return startTime;
+    public int getDuration() {
+        return endTime - startTime;
     }
 
     public int getEndTime() {
         return endTime;
-    }
-
-    public int getDuration() {
-        return endTime - startTime;
     }
 
     public double getMiles() {
@@ -29,6 +25,10 @@ public class Trip {
 
     public double getMPH() {
         return miles / ((endTime - startTime) / 60.0);
+    }
+
+    public int getStartTime() {
+        return startTime;
     }
 
     // Overloaded Methods

@@ -1,4 +1,4 @@
-import java.util.*; // Used for ArrayList
+import java.util.*;
 
 public class Driver {
     private String name;
@@ -14,11 +14,18 @@ public class Driver {
     }
 
     // Public Methods
-    // ----------------------
     public void addTrip(Trip trp) {
         milesDriven += trp.getMiles();
         timeDriven += trp.getDuration();
         trips.add(trp);
+    }
+
+    public double getMiles() {
+        return milesDriven;
+    }
+
+    public double getMPH() {
+        return milesDriven / (timeDriven / 60.0);
     }
 
     public String getName() {
@@ -31,14 +38,6 @@ public class Driver {
 
     public int numTrips() {
         return trips.size();
-    }
-
-    public double getMiles() {
-        return milesDriven;
-    }
-
-    public double getMPH() {
-        return milesDriven / (timeDriven / 60.0);
     }
 
     // Overloaded Methods

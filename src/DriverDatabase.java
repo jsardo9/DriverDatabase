@@ -12,12 +12,12 @@ public class DriverDatabase {
         drivers.put(driver.getName(), driver);
     }
 
-    public Driver removeDriver(String name) {
-        return drivers.remove(name);
-    }
-
     public Driver getDriver(String name) {
         return drivers.get(name);
+    }
+
+    public Driver removeDriver(String name) {
+        return drivers.remove(name);
     }
 
     public void printByMileage() {
