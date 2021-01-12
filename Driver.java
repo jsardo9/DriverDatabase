@@ -25,6 +25,10 @@ public class Driver {
         return name;
     }
 
+    public ArrayList<Trip> getTrips() {
+        return trips;
+    }
+
     public int numTrips() {
         return trips.size();
     }
@@ -37,7 +41,7 @@ public class Driver {
         return milesDriven / (timeDriven / 60.0);
     }
 
-    // Overloaded Print Method
+    // Overloaded Methods
     public String toString() {
         return name + ": " + (int) milesDriven + " miles @ " + (int) getMPH() + " mph";
     }

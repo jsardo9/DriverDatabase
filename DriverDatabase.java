@@ -9,15 +9,28 @@ public class DriverDatabase {
 
     // Public Methods
     // ----------------------
-    public void addTrip(Trip trp) {
+    public void addDriver(Driver driver) {
+        drivers.put(driver.getName(), driver);
     }
 
-    // Overloaded Print Method
-    public String toString() {
-        String allDrivers = "";
-        for (Driver driver : drivers.values()) {
-            allDrivers += driver + "\n";
+    public Driver removeDriver(String name) {
+        return drivers.remove(name);
+    }
+
+    public void printByMileage() {
+        ArrayList<Driver> allDrivers = new ArrayList<>(drivers.values());
+        Collections.sort(allDrivers, (d1, d2) -> (int) (d2.getMiles() - d1.getMiles()));
+        for (Driver driver : allDrivers) {
+            System.out.println(driver);
         }
-        return allDrivers;
+    }
+
+    // Overloaded Methods
+    public String toString() {
+        String driverString = "";
+        for (Driver driver : drivers.values()) {
+            driverString += driver + "\n";
+        }
+        return driverString;
     }
 }
