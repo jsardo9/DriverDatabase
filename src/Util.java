@@ -1,5 +1,5 @@
 public class Util {
-    // Splits Input Line Into Corresponding Command
+    // Calls Corresponding Command Function From Input
     public static void parseCommand(String command, DriverDatabase driverDB) {
         String[] input = command.split(" ");
         switch (input[0]) {

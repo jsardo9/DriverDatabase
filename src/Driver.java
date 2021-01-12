@@ -32,7 +32,7 @@ public class Driver {
         return name;
     }
 
-    public ArrayList<Trip> getTrips() {
+    public List<Trip> getTrips() {
         return trips;
     }
 

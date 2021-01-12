@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         if (args.length != 1) {
-            throw new IllegalArgumentException("Enter Input File As Command Line Argument");
+            throw new IllegalArgumentException("Enter Input File Name As Command Line Argument | java Main [FILENAME]");
         }
 
         // Primary Data Structure
