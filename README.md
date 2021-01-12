@@ -44,3 +44,7 @@ I chose to structure my program with 3 distinct classes and a parser reading the
 - Input parser allows for easy addition of commands from an input file.
 - 3 class abstraction allows for easy human comprehensible way to efficiently lookup and access driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
+
+# How Input File Is Read In
+ - All input files must be placed within the ./input/ folder
+ - Designate the specific input file you want to run using the command line (i.e. java Main [FILENAME])
