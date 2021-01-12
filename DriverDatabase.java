@@ -17,6 +17,10 @@ public class DriverDatabase {
         return drivers.remove(name);
     }
 
+    public Driver getDriver(String name) {
+        return drivers.get(name);
+    }
+
     public void printByMileage() {
         ArrayList<Driver> allDrivers = new ArrayList<>(drivers.values());
         Collections.sort(allDrivers, (d1, d2) -> (int) (d2.getMiles() - d1.getMiles()));

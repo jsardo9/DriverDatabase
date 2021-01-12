@@ -10,8 +10,7 @@ public class Trip {
         this.miles = miles;
     }
 
-    // Public Accessor Method
-    // ----------------------
+    // Public Accessor Methods
     public int getStartTime() {
         return startTime;
     }
@@ -32,11 +31,11 @@ public class Trip {
         return miles / ((endTime - startTime) / 60.0);
     }
 
-    // Overloaded Print Method
+    // Overloaded Methods
     public String toString() {
         String start = (startTime / 60) + ":" + (startTime % 60);
         String end = (endTime / 60) + ":" + (endTime % 60);
-        return "Trip Start: " + start + " | Trip End: " + end + " | Miles Driven: " + (int) miles + " | Avergage MPH: "
+        return "Trip Start: " + start + " | Trip End: " + end + " | Miles Driven: " + (int) miles + " | Average MPH: "
                 + (int) getMPH();
     }
 }
