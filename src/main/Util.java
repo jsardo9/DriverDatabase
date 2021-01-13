@@ -1,5 +1,3 @@
-package com.github.jsardo9.worksample;
-
 public class Util {
     // Calls Corresponding Command Function From Input
     public static void parseCommand(String command, DriverDatabase driverDB) {

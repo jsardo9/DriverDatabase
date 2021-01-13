@@ -1,6 +1,4 @@
-package com.github.jsardo9.worksample;
-
-public class UtilTester {
+public class UtilTests {
     public static void main(String[] args) {
         // Creating a sample inputs
         String driverTest1 = "Driver Steve";

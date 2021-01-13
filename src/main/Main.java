@@ -1,5 +1,3 @@
-package com.github.jsardo9.worksample;
-
 import java.io.*;
 
 public class Main {

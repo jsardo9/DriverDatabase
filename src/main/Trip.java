@@ -1,5 +1,3 @@
-package com.github.jsardo9.worksample;
-
 public class Trip {
     // startTime and endTime stored as minutes on 24hr clock
     private int startTime;

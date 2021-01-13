@@ -1,6 +1,4 @@
-package com.github.jsardo9.worksample;
-
-public class TripTester {
+public class TripTests {
     public static void main(String[] args) {
         // Creating a sample Trip
         Trip testTrip = new Trip(130, 350, 55.3);
