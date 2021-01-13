@@ -1,0 +1,35 @@
+<project name="WorkSample">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <path id="test.classpath">
+        <pathelement path="build/test"/>
+        <pathelement path="build/main"/>
+        <fileset dir="${ant.home}/lib" includes="*.jar" />
+    </path>
+
+    <target name="compile">
+        <mkdir dir="build/main"/>
+        <javac srcdir="src/main" destdir="build/main"/>
+        <mkdir dir="build/tests"/>
+        <javac srcdir="src/tests" classpathref="test.classpath" destdir="build/tests"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/Main.jar" basedir="build/main">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/Main.jar" fork="true">
+            <arg line="input.txt"/>
+        </java>
+    </target>
+
+</project>

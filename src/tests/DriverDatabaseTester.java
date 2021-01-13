@@ -1,3 +1,5 @@
+package com.github.jsardo9.worksample;
+
 public class DriverDatabaseTester {
     public static void main(String[] args) {
         // Creating a sample Database

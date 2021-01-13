@@ -1,3 +1,5 @@
+package com.github.jsardo9.worksample;
+
 import java.util.*;
 
 public class Driver {
@@ -42,6 +44,10 @@ public class Driver {
 
     // Overloaded Methods
     public String toString() {
-        return name + ": " + (int) milesDriven + " miles @ " + (int) getMPH() + " mph";
+        String driver = name + ": " + (int) milesDriven + " miles";
+        if (milesDriven > 0) {
+            driver += "@ " + (int) getMPH() + " mph";
+        }
+        return driver;
     }
 }

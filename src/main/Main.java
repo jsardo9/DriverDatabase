@@ -1,3 +1,5 @@
+package com.github.jsardo9.worksample;
+
 import java.io.*;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
         DriverDatabase driverDB = new DriverDatabase();
 
         // Input File Reader
-        try (BufferedReader br = new BufferedReader(new FileReader("../input/" + args[0]))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("input/" + args[0]))) {
             String currLine;
             while ((currLine = br.readLine()) != null) {
                 Util.parseCommand(currLine, driverDB);
