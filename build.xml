@@ -41,10 +41,12 @@
     </target>
 
     <target name="test" depends="compile">
-      <junit>
+      <junit haltOnFailure="true" printSummary="true">
          <classpath refid = "test.classpath" />
          <formatter type = "brief" usefile = "false" />
          <test name = "TripTest" />
+         <test name = "DriverTest" />
+         <test name = "DriverDatabaseTest" />
       </junit>
    </target>
 

@@ -44,7 +44,7 @@ public class Driver {
     public String toString() {
         String driver = name + ": " + (int) milesDriven + " miles";
         if (milesDriven > 0) {
-            driver += "@ " + (int) getMPH() + " mph";
+            driver += " @ " + (int) getMPH() + " mph";
         }
         return driver;
     }

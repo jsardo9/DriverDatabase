@@ -16,6 +16,10 @@ public class DriverDatabase {
         return drivers.get(name);
     }
 
+    public int numDrivers() {
+        return drivers.size();
+    }
+
     public Driver removeDriver(String name) {
         return drivers.remove(name);
     }
