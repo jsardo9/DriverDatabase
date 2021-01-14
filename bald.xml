@@ -1,0 +1,65 @@
+<project name="WorkSample">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <path id="test.classpath">
+        <pathelement path="build/classes"/>
+        <fileset dir="lib">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="compile" depends = "clean">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src/main" destdir="build/classes" source="1.8" target="1.8" includeantruntime="false"/>
+        <javac srcdir="src/tests" classpathref="test.classpath" destdir="build/classes" source="1.8" target="1.8" includeantruntime="false"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/Main.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+        <jar destfile="build/jar/TestRunner.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="TestRunner"/>
+            </manifest>
+        </jar>
+        <mkdir dir="build/jar/tests"/>
+        <jar destfile="build/jar/tests/UtilTests.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="UtilTests"/>
+            </manifest>
+        </jar>
+        <jar destfile="build/jar/tests/TripTests.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="TripTests"/>
+            </manifest>
+        </jar>
+        <jar destfile="build/jar/tests/DriverTests.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="DriverTests"/>
+            </manifest>
+        </jar>
+        <jar destfile="build/jar/tests/DriverDatabaseTests.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="DriverDatabaseTests"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run-main">
+        <java jar="build/jar/Main.jar" fork="true">
+            <arg line="input.txt"/>
+        </java>
+    </target>
+
+    <target name="tests">
+        <java jar="build/jar/TestRunner.jar" fork="true" />
+    </target>
+
+</project>
