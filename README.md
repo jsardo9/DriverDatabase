@@ -1,3 +1,25 @@
+# Build Instructions
+This program is built using Apache Ant (version 1.10.9)
+
+**Commands**
+```ant
+ant build
+```
+This will only succeed if program passes all unit tests, allowing for a clean build. (Details in section "Testing")
+```ant
+ant run
+```
+This will run the program using file named "input.txt" within input folder.
+
+**Ant Alternative**
+I have provided a Main.jar file in the root of the directory for convenience if Apache Ant is not installed.
+```java
+java -jar Main.jar [INPUTFILE.TXT]
+```
+This command will run the program in which "[INPUTFILE.TXT]" is the name of the specific input file you wish to run.
+(Input file must be located within folder ./input/)
+
+
 # General Structure / Organization
  The core of my program was built around 3 core structures. "DriverDatabase" "Driver" and "Trip"
  - The DriverDatabase class is used to efficiently store all the Driver objects in a B-tree with fast and simple functionality for retrieving and editing the Driver objects within.
@@ -39,12 +61,11 @@ First for each line of input a parser function is called. This function then pas
 
 I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
 I also had each helper functions perform basic error checking to make sure arguments from the input file are correct.
+# Testing
+Testing done using JUnit Framework
+Most recent tests results can be located within ./build/test-report
 # Conclusion
 I chose to structure my program with 3 distinct classes and a parser reading the inputs for the following reasons.
 - Input parser allows for easy addition of commands from an input file.
 - 3 class abstraction allows for easy human comprehensible way to efficiently lookup and access driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
-
-# How Input File Is Read In
- - All input files must be placed within the ./input/ folder
- - Designate the specific input file you want to run using the command line (i.e. java Main [FILENAME])
