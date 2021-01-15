@@ -38,7 +38,7 @@ public class DriverTest {
     }
 
     @Test
-    public void convertingTripToString() {
+    public void convertingDriverToString() {
         String message = "Dave: 102 miles @ 17 mph";
         assertEquals(message, testDriver.toString());
     }

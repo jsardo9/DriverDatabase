@@ -17,7 +17,8 @@ public class Util {
         }
     }
 
-    // Input Command "Driver [NAME]""
+    // Input Command "Driver [NAME]"
+    // Creates and Adds New Driver to Database
     public static void commandDriver(String[] command, DriverDatabase driverDB) {
         if (command.length != 2) {
             throw new IllegalArgumentException(
@@ -29,6 +30,7 @@ public class Util {
     }
 
     // Input Command "Trip [NAME] [STARTTIME] [ENDTIME] [MILES]"
+    // Adds Inputted Trip to Specified Driver within the Database
     public static void commandTrip(String[] command, DriverDatabase driverDB) {
         if (command.length != 5) {
             throw new IllegalArgumentException(
@@ -37,7 +39,7 @@ public class Util {
 
         // Reading In Command Parameters
         String driver = command[1];
-        // COMMENT ABOUT THIS
+        // Converting time to correspending number of minutes (i.e. 1:20 -> 80)
         int start = (Integer.parseInt(command[2].split(":")[0]) * 60) + Integer.parseInt(command[2].split(":")[1]);
         int end = (Integer.parseInt(command[3].split(":")[0]) * 60) + Integer.parseInt(command[3].split(":")[1]);
         double miles = Double.parseDouble(command[4]);
