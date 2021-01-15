@@ -17,7 +17,7 @@ I have provided a Main.jar file in the root of the directory for convenience if 
 ```java
 java -jar Main.jar [INPUTFILE.TXT]
 ```
-This command will run the program in which "[INPUTFILE.TXT]" is the name of the specific input file you wish to run.
+This command will run the program in which "[INPUTFILE.TXT]" is the name of the specific input file you wish to run.   
 (Input file must be located within folder ./input/)
 
 
