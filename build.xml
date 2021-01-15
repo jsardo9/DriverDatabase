@@ -34,21 +34,23 @@
         </jar>
     </target>
 
-    <target name="run-main">
+    <target name="test" depends="compile">
+      <junit haltOnFailure="true" printSummary="true">
+         <classpath refid = "test.classpath" />
+         <formatter type="plain"/>
+         <batchtest fork="yes" todir="build/test-report">
+            <fileset dir="build/test">
+                <include name="**/*Test*.class"/>
+                <exclude name="**/*$*.class"/>
+            </fileset>
+        </batchtest>
+      </junit>
+   </target>
+
+   <target name="run">
         <java jar="Main.jar" fork="true">
             <arg line="input.txt"/>
         </java>
     </target>
-
-    <target name="test" depends="compile">
-      <junit haltOnFailure="true" printSummary="true">
-         <classpath refid = "test.classpath" />
-         <formatter type = "xml" usefile = "true" />
-         <test name = "TripTest" />
-         <test name = "DriverTest" />
-         <test name = "DriverDatabaseTest" />
-         <test name = "UtilTest" />
-      </junit>
-   </target>
 
 </project>
