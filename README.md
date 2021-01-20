@@ -81,4 +81,4 @@ I chose to structure my program with 3 distinct classes, a parser reading the in
 - Input parser allows for easy addition of new commands from an input file and error checking.
 - 3 class abstraction allows for a convenient human comprehensible way to efficiently access and change driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
-- Testing dependency for a new build provides assurance for the program's reliability and test reports provide comprehensive outlook of program's performance
+- Testing dependency for a new build provides assurance for the program's reliability and test reports provide a comprehensive outlook of the program's performance
