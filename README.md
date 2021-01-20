@@ -44,7 +44,7 @@ This class stores a driver's name in conjunction with all their trips, miles dri
 
 I chose to store a driver's trips in a list (ArrayList) as this will store and index them in the order in which they were added to the driver. This allows for constant time lookup by index and (mostly) constant time adding to the list.
 
-A drivers total mileage and time on the road is updated as each new trip is added.
+A driver's total mileage and time on the road is updated as each new trip is added.
 # DriverDatabase Class
 This class stores driver objects.
 
@@ -54,7 +54,7 @@ I chose the underlying structure to store the drivers to be a Map that is backed
 
 Runtime Breakdown:
   - O(log(n)) lookups, insertions, and deletions
-  - Although there is a O(log(n)) time complexity for inserting and retreiving individual drivers I believe this structure is still optimal as it is sorted and memory efficient. I chose this over a hash table where you may have quicker O(1) operations but would lose the sorted property and have wasted memory. If the necessity for faster actions was greater than the expense of memory I would consider using a hash table instead of a tree stucture.
+  - Although there is a O(log(n)) time complexity for most operations, I believe this structure is still optimal as it is sorted and memory efficient. I chose this over a hash table where you may have quicker O(1) operations but would lose the sorted property and have wasted memory. If the necessity for faster actions was greater than the expense of memory, I would consider using a hash table instead of a tree structure.
 
 I chose to sort the drivers within the database by name since I believe it is the most practical way to organize a group of drivers, as drivers would most frequently be looked up by their name. Due to these reasons I also made the default print function for this class be in alphabetical order.
 
