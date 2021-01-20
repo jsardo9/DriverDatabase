@@ -2,6 +2,7 @@
 This program is built using Apache Ant (version 1.10.9)
 
 **Commands**
+
 ```
 ant build
 ```
@@ -12,6 +13,7 @@ ant run
 This will run the program using file named "input.txt" within input folder.
 
 **Ant Alternative**
+
 I have provided a Main.jar file in the root of the directory for convenience if Apache Ant is not installed.
 ```
 java -jar Main.jar |INPUTFILE.TXT|
