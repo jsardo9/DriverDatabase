@@ -34,7 +34,7 @@ This command will run the program in which "|INPUTFILE.TXT|" is the name of the 
 
  I chose to make these three objects classes with public accessor methods for private internals to provide simplicity, more organization, and to guarantee only friendly operations are performed on the internal structures (i.e. It's harder to accidently edit / alter drivers' data within the database).
 
-I have overridden the default Object toString() method for each of the 3 classes allow for easy printing to console and convenience for testing.
+I have overridden the default Object toString() method for each of the 3 classes allowing for easy printing to console and convenience for testing.
 # Trip Class
  This class in the constructor takes in a start time, end time, and total miles.
 
@@ -46,28 +46,28 @@ I chose to store a driver's trips in a list (ArrayList) as this will store and i
 
 A drivers total mileage and time on the road is updated as each new trip is added.
 # DriverDatabase Class
-The class stores driver objects.
+This class stores driver objects.
 
 I chose the underlying structure to store the drivers to be a Map that is backed by a B-Tree (TreeMap) for the following 2 main reasons and for its runtime benefits.
 - The map like properties allows us to index the driver objects by their names. This allows for simple and convenient lookups searching for a driver by name.
-- The B-Tree properties are great for large storage systems as it sorts the drivers upon insertion and allows for fast lookups, insertions, and deletions.
+- The B-tree properties are great for large storage systems as it sorts the drivers upon insertion and allows for fast lookups, insertions, and deletions.
 
 Runtime Breakdown:
   - O(log(n)) lookups, insertions, and deletions
-  - Although there is a O(log(n)) time complexity for inserting drivers resulting in O(nlog(n)) complexity for entirely populating the database I believe this structure is still optimal as once drivers are inserted we can access them quickly from their sorted order as apposed to something like hashmap where you may have quicker operations you lose the sorted property and have wasted memory.
+  - Although there is a O(log(n)) time complexity for inserting and retreiving individual drivers I believe this structure is still optimal as it is sorted and memory efficient. I chose this over a hash table where you may have quicker O(1) operations but would lose the sorted property and have wasted memory. If the necessity for faster actions was greater than the expense of memory I would consider using a hash table instead of a tree stucture.
 
-I chose to sort the drivers within the database by name since I believe it is the most practical way to organize a group of drivers, and makes lookups by name much more efficient. Due to these reasons I also made the default print function for this class alphabetical order.
+I chose to sort the drivers within the database by name since I believe it is the most practical way to organize a group of drivers, as drivers would most frequently be looked up by their name. Due to these reasons I also made the default print function for this class be in alphabetical order.
 
 Since, however, this problem wanted the drivers to be outputted by miles driven I added another function, printByMileage(), which instead prints the drivers by their total mileage. However, since the drivers are sorted by name this operation takes O(nlog(n)) compared to the O(n) complexity printing alphabetically.
 # Util Functions
 There are thee helper functions which my code utilizes.
-First for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions ("Driver" or "Trip").
+First, for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions ("Driver" or "Trip") which either adds a new driver to the database or adds a new trip to a specified driver.
 
 I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
-I also had each helper functions perform basic error checking to make sure arguments from the input file are correct.
+I also had each helper function perform basic error checking to make sure arguments from the input file were correct.
 # Testing
 Testing was done using JUnit4.
-I chose to use this testing framework, since in combination with Apache Ant, successfully passing the unit tests is a precondition for the program being built. This means the final product is guaranteed to be a clean build as a new version will not be created unless the tests are all passed.
+I chose this testing framework, since in combination with Apache Ant, successfully passing the unit tests is a precondition for the program being built. This means the final product is guaranteed to be a clean build as a new version will not be created unless the tests are all passed.
 
 Additionally I made test reports automatically generate as .txt files located in ./build/test-report for a comprehensive breakdown of the previously run tests.
 
@@ -76,6 +76,6 @@ https://en.wikipedia.org/wiki/JUnit#Example_of_JUnit_test_fixture
 # Conclusion
 I chose to structure my program with 3 distinct classes, a parser reading the inputs, and JUnit testing framework for the following reasons.
 - Input parser allows for easy addition of commands from an input file.
-- 3 class abstraction allows for easy human comprehensible way to efficiently lookup and access driver information.
+- 3 class abstraction allows for a convenient human comprehensible way to efficiently access and change driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
 - Testing dependency for a new build provides assurance for the program's reliability and test reports provide comprehensive outlook of program's performance
