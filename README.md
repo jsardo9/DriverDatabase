@@ -22,7 +22,7 @@ This command will run the program in which "|INPUTFILE.TXT|" is the name of the 
 
 (i.e. java -jar Main.jar input.txt)
 
-!!Input file must be located within folder ./input/!!
+!! Input file must be located within folder ./input/ !!
 
 # General Structure / Organization
  The core of my program was built around 3 core structures. "DriverDatabase" "Driver" and "Trip"
