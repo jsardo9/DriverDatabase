@@ -61,9 +61,11 @@ I chose to sort the drivers within the database by name since I believe it is th
 Since, however, this problem wanted the drivers to be outputted by miles driven I added another function, printByMileage(), which instead prints the drivers by their total mileage. However, since the drivers are sorted by name this operation takes O(nlog(n)) compared to the O(n) complexity printing alphabetically.
 # Util Functions
 There are thee helper functions which my code utilizes.
+
 First, for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions ("Driver" or "Trip") which either adds a new driver to the database or adds a new trip to a specified driver.
 
 I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
+
 I also had each helper function perform basic error checking to make sure arguments from the input file were correct.
 # Testing
 Testing was done using JUnit4.
