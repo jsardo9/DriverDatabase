@@ -19,7 +19,9 @@ I have provided a Main.jar file in the root of the directory for convenience if 
 java -jar Main.jar |INPUTFILE.TXT|
 ```
 This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.
+
 (i.e. java -jar Main.jar input.txt)
+
 !!Input file must be located within folder ./input/!!
 
 # General Structure / Organization
@@ -66,6 +68,7 @@ I also had each helper functions perform basic error checking to make sure argum
 # Testing
 Testing was done using JUnit4.
 I chose to use this testing framework, since in combination with Apache Ant, successfully passing the unit tests is a precondition for the program being built. This means the final product is guaranteed to be a clean build as a new version will not be created unless the tests are all passed.
+
 Additionally I made test reports automatically generate as .txt files located in ./build/test-report for a comprehensive breakdown of the previously run tests.
 
 I followed standard JUnit and BDD naming conventions for my classes and tests.
