@@ -78,7 +78,7 @@ I followed standard JUnit and BDD naming conventions for my classes and tests.
 https://en.wikipedia.org/wiki/JUnit#Example_of_JUnit_test_fixture
 # Conclusion
 I chose to structure my program with 3 distinct classes, a parser reading the inputs, and JUnit testing framework for the following reasons.
-- Input parser allows for easy addition of commands from an input file.
+- Input parser allows for easy addition of new commands from an input file and error checking.
 - 3 class abstraction allows for a convenient human comprehensible way to efficiently access and change driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
 - Testing dependency for a new build provides assurance for the program's reliability and test reports provide comprehensive outlook of program's performance
