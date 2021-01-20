@@ -2,7 +2,6 @@
 This program is built using Apache Ant (version 1.10.9)
 
 **Commands**
-
 ```
 ant build
 ```
@@ -13,14 +12,13 @@ ant run
 This will run the program using file named "input.txt" within input folder.
 
 **Ant Alternative**
-
 I have provided a Main.jar file in the root of the directory for convenience if Apache Ant is not installed.
 ```
 java -jar Main.jar |INPUTFILE.TXT|
 ```
-i.e. java -jar Main.jar input.txt
-This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.   
-**(Input file must be located within folder ./input/)**
+This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.
+(i.e. java -jar Main.jar input.txt)
+**Input file must be located within folder ./input/**
 
 # General Structure / Organization
  The core of my program was built around 3 core structures. "DriverDatabase" "Driver" and "Trip"
