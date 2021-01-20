@@ -64,7 +64,7 @@ There are thee helper functions which my code utilizes.
 
 First, for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions ("Driver" or "Trip") which either adds a new driver to the database or adds a new trip to a specified driver.
 
-I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
+I chose this approach as it is very easy to add compatibility for new input commands.
 
 I also had each helper function perform basic error checking to make sure arguments from the input file were correct.
 # Testing
