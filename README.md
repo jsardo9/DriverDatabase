@@ -42,7 +42,7 @@ Start time and end time are taken in and stored as MINUTES on a 24 hr clock (i.e
 # Driver Class
 This class stores a driver's name in conjunction with all their trips, miles driven, and time on the road.
 
-I chose to store a driver's trips in a list (ArrayList) as this will store and index them in the order in which they were added to the driver. This allows for constant time lookup by index and (mostly) constant time adding to it.
+I chose to store a driver's trips in a list (ArrayList) as this will store and index them in the order in which they were added to the driver. This allows for constant time lookup by index and (mostly) constant time adding to the list.
 
 A drivers total mileage and time on the road is updated as each new trip is added.
 # DriverDatabase Class
