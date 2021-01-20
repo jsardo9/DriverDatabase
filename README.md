@@ -44,7 +44,7 @@ This class stores a driver's name in conjunction with all their trips, miles dri
 
 I chose to store a driver's trips in a list (ArrayList) as this will store and index them in the order in which they were added to the driver. This allows for constant time lookup by index and (mostly) constant time adding to it.
 
-A drivers total mileage and time on the road is updated as each new trip is added. (Efficient)
+A drivers total mileage and time on the road is updated as each new trip is added.
 # DriverDatabase Class
 The class stores driver objects.
 
@@ -61,7 +61,7 @@ I chose to sort the drivers within the database by name since I believe it is th
 Since, however, this problem wanted the drivers to be outputted by miles driven I added another function, printByMileage(), which instead prints the drivers by their total mileage. However, since the drivers are sorted by name this operation takes O(nlog(n)) compared to the O(n) complexity printing alphabetically.
 # Util Functions
 There are thee helper functions which my code utilizes.
-First for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions("Driver" or "Trip").
+First for each line of input a parser function is called. This function then passes on the input to one of the two corresponding command functions ("Driver" or "Trip").
 
 I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
 I also had each helper functions perform basic error checking to make sure arguments from the input file are correct.
