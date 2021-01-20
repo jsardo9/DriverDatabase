@@ -2,6 +2,7 @@
 This program is built using Apache Ant (version 1.10.9)
 
 **Commands**
+
 ```
 ant build
 ```
@@ -12,13 +13,14 @@ ant run
 This will run the program using file named "input.txt" within input folder.
 
 **Ant Alternative**
+
 I have provided a Main.jar file in the root of the directory for convenience if Apache Ant is not installed.
 ```
 java -jar Main.jar |INPUTFILE.TXT|
 ```
+i.e. java -jar Main.jar input.txt
 This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.   
-(Input file must be located within folder ./input/)
-
+**(Input file must be located within folder ./input/)**
 
 # General Structure / Organization
  The core of my program was built around 3 core structures. "DriverDatabase" "Driver" and "Trip"
@@ -62,10 +64,15 @@ First for each line of input a parser function is called. This function then pas
 I chose this approach as it is very easy to add compatibility for new input commands (from within the parser function).
 I also had each helper functions perform basic error checking to make sure arguments from the input file are correct.
 # Testing
-Testing done using JUnit Framework
-Most recent tests results can be located within ./build/test-report
+Testing was done using JUnit4.
+I chose to use this testing framework, since in combination with Apache Ant, successfully passing the unit tests is a precondition for the program being built. This means the final product is guaranteed to be a clean build as a new version will not be created unless the tests are all passed.
+Additionally I made test reports automatically generate as .txt files located in ./build/test-report for a comprehensive breakdown of the previously run tests.
+
+I followed standard JUnit and BDD naming conventions for my classes and tests.
+https://en.wikipedia.org/wiki/JUnit#Example_of_JUnit_test_fixture
 # Conclusion
-I chose to structure my program with 3 distinct classes and a parser reading the inputs for the following reasons.
+I chose to structure my program with 3 distinct classes, a parser reading the inputs, and JUnit testing framework for the following reasons.
 - Input parser allows for easy addition of commands from an input file.
 - 3 class abstraction allows for easy human comprehensible way to efficiently lookup and access driver information.
 - Modularity of the program's components allows for easy implementation for testing, readability, organization, and code reusability.
+- Testing dependency for a new build provides assurance for the program's reliability and test reports provide comprehensive outlook of program's performance
