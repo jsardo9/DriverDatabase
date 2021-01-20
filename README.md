@@ -74,6 +74,7 @@ I chose this testing framework, since in combination with Apache Ant, successful
 Additionally I made test reports automatically generate as .txt files located in ./build/test-report for a comprehensive breakdown of the previously run tests.
 
 I followed standard JUnit and BDD naming conventions for my classes and tests.
+
 https://en.wikipedia.org/wiki/JUnit#Example_of_JUnit_test_fixture
 # Conclusion
 I chose to structure my program with 3 distinct classes, a parser reading the inputs, and JUnit testing framework for the following reasons.
