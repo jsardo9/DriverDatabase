@@ -1,7 +1,7 @@
 Testsuite: DriverDatabaseTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
 
-Testcase: accessingDrivers took 0.002 sec
-Testcase: addingDrivers took 0 sec
-Testcase: convertingDatabaseToString took 0.01 sec
-Testcase: removingDriver took 0 sec
+Testcase: testAddingDrivers took 0.002 sec
+Testcase: testConvertingDatabaseToString took 0 sec
+Testcase: testRemovingDriver took 0 sec
+Testcase: testAccessingDrivers took 0 sec

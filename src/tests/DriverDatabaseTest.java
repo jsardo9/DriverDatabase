@@ -9,7 +9,7 @@ public class DriverDatabaseTest {
     Driver James = new Driver("James");
 
     @Before // Adding Drivers To DB Before Running Tests
-    public void CreateSampleDatabase() {
+    public void setUpDatabase() {
         Dave.addTrip(new Trip(730, 760, 5.4));
         Dave.addTrip(new Trip(1120, 1155, 9.5));
         Dave.addTrip(new Trip(1301, 1355, 16.2));
@@ -25,22 +25,22 @@ public class DriverDatabaseTest {
     }
 
     @Test // Testing that Trips were added correctly during @Before
-    public void addingDrivers() {
+    public void testAddingDrivers() {
         assertEquals(3, testDB.numDrivers());
     }
 
     @Test
-    public void accessingDrivers() {
+    public void testAccessingDrivers() {
         assertSame(James, testDB.getDriver("James"));
     }
 
     @Test
-    public void removingDriver() {
+    public void testRemovingDriver() {
         assertSame(Alex, testDB.getDriver("Alex"));
     }
 
     @Test
-    public void convertingDatabaseToString() {
+    public void testConvertingDatabaseToString() {
         String message = "Alex: 100 miles @ 26 mph\n";
         message += "Dave: 31 miles @ 15 mph\n";
         message += "James: 102 miles @ 17 mph\n";

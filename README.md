@@ -2,19 +2,18 @@
 This program is built using Apache Ant (version 1.10.9)
 
 **Commands**
-```ant
+```
 ant build
 ```
 This will only succeed if program passes all unit tests, allowing for a clean build. (Details in section "Testing")
-```ant
+```
 ant run
 ```
 This will run the program using file named "input.txt" within input folder.
 
 **Ant Alternative**
-
 I have provided a Main.jar file in the root of the directory for convenience if Apache Ant is not installed.
-```java
+```
 java -jar Main.jar |INPUTFILE.TXT|
 ```
 This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.   

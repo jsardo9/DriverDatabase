@@ -22,7 +22,7 @@ public class Util {
     public static void commandDriver(String[] command, DriverDatabase driverDB) {
         if (command.length != 2) {
             throw new IllegalArgumentException(
-                    "Input File Command 'Driver' Contains Incorrect Numerber Of Parameters | Driver [NAME]");
+                    "Input File Command 'Driver' Contains Incorrect Number Of Parameters | Driver [NAME]");
         }
 
         // Adding New Driver
@@ -34,7 +34,7 @@ public class Util {
     public static void commandTrip(String[] command, DriverDatabase driverDB) {
         if (command.length != 5) {
             throw new IllegalArgumentException(
-                    "Input File Command 'Trip' Contains Incorrect Numerber Of Parameters | Trip [NAME] [STARTTIME] [ENDTIME] [MILES]");
+                    "Input File Command 'Trip' Contains Incorrect Number Of Parameters | Trip [NAME] [STARTTIME] [ENDTIME] [MILES]");
         }
 
         // Reading In Command Parameters

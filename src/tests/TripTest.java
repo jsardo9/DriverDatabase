@@ -2,36 +2,40 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class TripTest {
-    // Creating a sample Trip
-    Trip testTrip = new Trip(130, 350, 55.3);
+    // Creating a sample Trip and ITS information
+    static final int START = 130;
+    static final int END = 350;
+    static final double MILES = 55.3;
+    static final double MPH = MILES / ((END - START) / 60.0);
+    Trip testTrip = new Trip(START, END, MILES);
 
     @Test
-    public void accessingTripDuration() {
-        assertEquals(220, testTrip.getDuration());
+    public void testAccessingTripDuration() {
+        assertEquals(END - START, testTrip.getDuration());
     }
 
     @Test
-    public void accessingTripEndTime() {
-        assertEquals(350, testTrip.getEndTime());
+    public void testAccessingTripEndTime() {
+        assertEquals(END, testTrip.getEndTime());
     }
 
     @Test
-    public void accessingTripMiles() {
-        assertTrue(55.3 == testTrip.getMiles());
+    public void testAccessingTripMiles() {
+        assertTrue(MILES == testTrip.getMiles());
     }
 
     @Test
-    public void accessingTripMPH() {
-        assertTrue(55.3 / ((350 - 130) / 60.0) == testTrip.getMPH());
+    public void testAccessingTripMPH() {
+        assertTrue(MPH == testTrip.getMPH());
     }
 
     @Test
-    public void accessingTripStartTime() {
-        assertEquals(130, testTrip.getStartTime());
+    public void testAccessingTripStartTime() {
+        assertEquals(START, testTrip.getStartTime());
     }
 
     @Test
-    public void convertingTripToString() {
+    public void testConvertingTripToString() {
         String message = "Trip Start: 2:10 | Trip End: 5:50 | Miles Driven: 55 | Average MPH: 15";
         assertEquals(message, testTrip.toString());
     }

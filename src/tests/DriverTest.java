@@ -3,43 +3,43 @@ import org.junit.*;
 
 public class DriverTest {
     // Creating Sample Driver
-    Driver testDriver = new Driver("Dave");
+    static final String NAME = "Dave";
+    static final int TRIPS = 3;
+    static final double TOTAL_MILES = 102.3;
+    static final int TIME_DRIVEN = 356;
+    static final double MPH = TOTAL_MILES / (TIME_DRIVEN / 60.0);
+    Driver testDriver = new Driver(NAME);
 
-    @Before // Adding Sample Trips Before Executing Tests
-    public void CreateSampleDriver() {
+    @Before // Adding Sample Trips To Match Constants Before Executing Tests
+    public void setUpDriver() {
         testDriver.addTrip(new Trip(130, 350, 56.6));
         testDriver.addTrip(new Trip(444, 560, 30.5));
         testDriver.addTrip(new Trip(700, 720, 15.2));
     }
 
     @Test // Testing that Trips were added correctly during @Before
-    public void addingTrips() {
-        assertEquals(3, testDriver.numTrips());
+    public void testAddingTrips() {
+        assertEquals(TRIPS, testDriver.numTrips());
     }
 
     @Test
-    public void accessingTotalDriverMiles() {
-        assertTrue(102.3 == testDriver.getMiles());
+    public void testAccessingTotalDriverMiles() {
+        assertTrue(TOTAL_MILES == testDriver.getMiles());
     }
 
     @Test
-    public void accessingAverageDriverMPH() {
-        assertTrue(102.3 / (356 / 60.0) == testDriver.getMPH());
+    public void testAccessingAverageDriverMPH() {
+        assertTrue(MPH == testDriver.getMPH());
     }
 
     @Test
-    public void accessingDriverName() {
-        assertEquals("Dave", testDriver.getName());
+    public void testAccessingDriverName() {
+        assertEquals(NAME, testDriver.getName());
     }
 
     @Test
-    public void accessingDriversTrips() {
-        assertEquals(3, testDriver.getTrips().size());
-    }
-
-    @Test
-    public void convertingDriverToString() {
-        String message = "Dave: 102 miles @ 17 mph";
+    public void testConvertingDriverToString() {
+        String message = NAME + ": " + (int) (TOTAL_MILES) + " miles @ " + (int) (MPH) + " mph";
         assertEquals(message, testDriver.toString());
     }
 

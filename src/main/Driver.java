@@ -36,6 +36,10 @@ public class Driver {
         return trips;
     }
 
+    public int getTimeDriven() {
+        return timeDriven;
+    }
+
     public int numTrips() {
         return trips.size();
     }
