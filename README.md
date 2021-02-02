@@ -20,8 +20,6 @@ java -jar Main.jar |INPUTFILE.TXT|
 ```
 This command will run the program in which "|INPUTFILE.TXT|" is the name of the specific input file you wish to run.
 
-(i.e. java -jar Main.jar input.txt)
-
 !! Input file must be located within folder ./input/ !!
 
 # General Structure / Organization
