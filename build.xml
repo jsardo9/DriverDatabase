@@ -12,6 +12,7 @@
         <delete dir="build"/>
     </target>
 
+    <!-- Use to compile with JDK 8: source="1.8" target="1.8" -->
     <target name="compile">
         <mkdir dir="build/main"/>
         <mkdir dir="build/test"/>
