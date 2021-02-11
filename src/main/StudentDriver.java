@@ -1,8 +1,13 @@
 public class StudentDriver extends Driver {
+    private String school;
 
-    public void StudentDriver() {
-        
+    public StudentDriver(String name, String school) {
+        super(name);
+        this.school = school;
     }
 
-    Driver()
+    public String getSchool() {
+        return school;
+    }
+
 }
