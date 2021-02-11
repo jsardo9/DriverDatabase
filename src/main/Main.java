@@ -14,6 +14,9 @@ public class Main {
             String currLine;
             while ((currLine = br.readLine()) != null) {
                 Util.parseCommand(currLine, driverDB);
+                System.out.println("Input: " + currLine);
+                driverDB.printByMileage();
+                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();

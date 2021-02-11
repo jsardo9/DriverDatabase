@@ -43,4 +43,14 @@ public class DriverTest {
         assertEquals(message, testDriver.toString());
     }
 
+    @Test
+    public void testRemovingTrip() {
+        // Removing existing trip should be true
+        assertTrue(testDriver.removeTrip(130));
+        testDriver.addTrip(new Trip(130, 350, 56.6));
+
+        // Removing non-existant trip should be false
+        assertFalse(testDriver.removeTrip(1000000));
+    }
+
 }

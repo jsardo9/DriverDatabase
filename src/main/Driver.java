@@ -44,6 +44,18 @@ public class Driver {
         return trips.size();
     }
 
+    public boolean removeTrip(int startTime) {
+        for (int i = 0; i < trips.size(); i++) {
+            Trip trp = trips.get(i);
+            if (trp.getStartTime() == startTime) {
+                milesDriven -= trp.getMiles();
+                timeDriven -= trp.getDuration();
+                return trips.remove(trp);
+            }
+        }
+        return false;
+    }
+
     // Overloaded Methods
     public String toString() {
         String driver = name + ": " + (int) milesDriven + " miles";

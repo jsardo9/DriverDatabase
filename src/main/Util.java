@@ -11,6 +11,10 @@ public class Util {
                 commandTrip(input, driverDB);
                 break;
             }
+            case "Remove": {
+                commandRemove(input, driverDB);
+                break;
+            }
             default: {
                 throw new IllegalArgumentException("Input File Contains Unknown Command");
             }
@@ -49,5 +53,18 @@ public class Util {
         if (currTrip.getMPH() >= 5 && currTrip.getMPH() <= 100) {
             driverDB.getDriver(driver).addTrip(currTrip);
         }
+    }
+
+    // Input Command "Remove [NAME] [TRIPSTART]"
+    // Removes trip from [NAME] at specified [TRIPSTART]
+    public static void commandRemove(String[] command, DriverDatabase driverDB) {
+        if (command.length != 3) {
+            throw new IllegalArgumentException(
+                    "Input File Command 'Remove' Contains Incorrect Number Of Parameters | Remove [NAME] [TRIPSTART]");
+        }
+
+        int startTime = Integer.parseInt(command[2].split(":")[0]) * 60 + Integer.parseInt(command[2].split(":")[1]);
+        // Searching for trip to remove
+        driverDB.getDriver(command[1]).removeTrip(startTime);
     }
 }
