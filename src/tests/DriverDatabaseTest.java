@@ -41,9 +41,9 @@ public class DriverDatabaseTest {
 
     @Test
     public void testConvertingDatabaseToString() {
-        String message = "Alex: 100 miles @ 26 mph\n";
-        message += "Dave: 31 miles @ 15 mph\n";
-        message += "James: 102 miles @ 17 mph\n";
+        String message = "Alex: 100 miles @ 26 mph\n\n";
+        message += "Dave: 31 miles @ 15 mph\n\n";
+        message += "James: 102 miles @ 17 mph\n\n";
         assertEquals(message, testDB.toString());
     }
 }

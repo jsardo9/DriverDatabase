@@ -15,6 +15,10 @@ public class Util {
                 commandRemove(input, driverDB);
                 break;
             }
+            case "Car": {
+                commandCar(input, driverDB);
+                break;
+            }
             default: {
                 throw new IllegalArgumentException("Input File Contains Unknown Command");
             }
@@ -31,6 +35,17 @@ public class Util {
 
         // Adding New Driver
         driverDB.addDriver(new Driver(command[1]));
+    }
+
+    // Input Command "Car [DRIVER] [MAKE] [MODEL]"
+    // Creates and Adds New Car to Specified Driver
+    public static void commandCar(String[] command, DriverDatabase driverDB) {
+        if (command.length != 4) {
+            throw new IllegalArgumentException(
+                    "Input File Command 'Car' Contains Incorrect Number Of Parameters | Car [DRIVER] [MAKE] [MODEL]");
+        }
+
+        driverDB.getDriver(command[1]).addCar(command[2], command[3]);
     }
 
     // Input Command "Trip [NAME] [STARTTIME] [ENDTIME] [MILES]"

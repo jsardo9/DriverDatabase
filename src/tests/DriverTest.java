@@ -39,7 +39,7 @@ public class DriverTest {
 
     @Test
     public void testConvertingDriverToString() {
-        String message = NAME + ": " + (int) (TOTAL_MILES) + " miles @ " + (int) (MPH) + " mph";
+        String message = NAME + ": " + (int) (TOTAL_MILES) + " miles @ " + (int) (MPH) + " mph\n";
         assertEquals(message, testDriver.toString());
     }
 

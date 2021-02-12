@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Driver {
     private String name;
+    private List<Car> cars;
     private ArrayList<Trip> trips;
     private double milesDriven;
     private int timeDriven; // timeDriven in minutes
@@ -11,17 +12,27 @@ public class Driver {
         trips = new ArrayList<>();
         milesDriven = 0;
         timeDriven = 0;
+        cars = new ArrayList<Car>();
     }
 
     // Public Methods
+    public void addCar(String make, String model) {
+        // System.out.println("car added");
+        cars.add(new Car(make, model));
+    }
+
     public void addTrip(Trip trp) {
         milesDriven += trp.getMiles();
         timeDriven += trp.getDuration();
         trips.add(trp);
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
     public double getMiles() {
-        return milesDriven;
+        return milesDriven * 10;
     }
 
     public double getMPH() {
@@ -65,6 +76,10 @@ public class Driver {
         String driver = name + ": " + (int) milesDriven + " miles";
         if (milesDriven > 0) {
             driver += " @ " + (int) getMPH() + " mph";
+        }
+        driver += "\n";
+        for (Car car : cars) {
+            driver += car;
         }
         return driver;
     }
