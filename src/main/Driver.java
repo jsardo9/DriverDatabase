@@ -56,6 +56,10 @@ public class Driver {
         return false;
     }
 
+    public int compareTo(Driver other) {
+        return name.compareTo(other.name);
+    }
+
     // Overloaded Methods
     public String toString() {
         String driver = name + ": " + (int) milesDriven + " miles";

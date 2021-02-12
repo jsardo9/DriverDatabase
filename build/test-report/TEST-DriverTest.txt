@@ -1,9 +1,9 @@
 Testsuite: DriverTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
 
 Testcase: testAddingTrips took 0.002 sec
-Testcase: testAccessingTotalDriverMiles took 0 sec
+Testcase: testAccessingTotalDriverMiles took 0.001 sec
 Testcase: testRemovingTrip took 0 sec
 Testcase: testAccessingDriverName took 0 sec
-Testcase: testConvertingDriverToString took 0.007 sec
+Testcase: testConvertingDriverToString took 0.008 sec
 Testcase: testAccessingAverageDriverMPH took 0 sec
