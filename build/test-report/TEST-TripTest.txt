@@ -1,9 +1,0 @@
-Testsuite: TripTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
-
-Testcase: testAccessingTripMPH took 0.002 sec
-Testcase: testAccessingTripEndTime took 0 sec
-Testcase: testAccessingTripStartTime took 0 sec
-Testcase: testConvertingTripToString took 0.014 sec
-Testcase: testAccessingTripDuration took 0 sec
-Testcase: testAccessingTripMiles took 0 sec
